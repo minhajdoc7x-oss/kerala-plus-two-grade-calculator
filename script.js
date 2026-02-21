@@ -45,9 +45,18 @@ function calculate() {
 
     // AUTO-SCROLL: Moves screen to the result
     outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // CONFETTI EFFECT: Triggers for any grade better than E
+    if (grade !== "E") {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#4e73df', '#1cc88a', '#ff6a00', '#ee0979']
+        });
+    }
 }
 
-// NEW: Clear Fields function for Step 4
 function clearFields() {
     // Reset all input boxes
     document.getElementById("subject").value = "";
