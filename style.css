@@ -1,32 +1,42 @@
+/* ===== BODY ===== */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #4e73df, #1cc88a);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;   /* changed */
-    min-height: 100vh;         /* changed */
-    flex-direction: column;
     margin: 0;
-    padding: 20px;             /* added */
+    padding: 20px;
+    min-height: 100vh;
 }
-/* CONTAINER */
+
+/* ===== CONTAINER ===== */
 .container {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255, 255, 255, 0.95);
     width: 100%;
     max-width: 480px;
+    margin: 60px auto;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
     text-align: center;
+    transition: 0.3s ease;
 }
 
-/* HEADINGS */
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== TITLES ===== */
 h2 {
     font-size: 24px;
     margin-bottom: 15px;
+    color: #333;
 }
 
-/* INPUTS */
+h3 {
+    margin: 10px 0 5px;
+    color: #444;
+}
+
+/* ===== INPUTS ===== */
 input {
     width: 100%;
     padding: 10px;
@@ -34,13 +44,14 @@ input {
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 15px;
+    box-sizing: border-box;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 button {
-    width: 100%;
-    padding: 12px;
     margin-top: 15px;
+    padding: 12px;
+    width: 100%;
     background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: white;
     border: none;
@@ -48,19 +59,31 @@ button {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 button:hover {
     transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 }
 
-/* LOGIN BUTTON */
+/* ===== LOGIN BUTTON SPECIAL ===== */
 #loginBtn {
-    background: #4CAF50;
+    background-color: #4CAF50;
 }
 
-/* RESULT */
+#loginBtn:active {
+    animation: bubble 0.3s ease;
+}
+
+@keyframes bubble {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.15); }
+    60% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+/* ===== RESULT SECTION ===== */
 .result {
     margin-top: 20px;
     font-size: 16px;
@@ -69,12 +92,18 @@ button:hover {
 .grade-box {
     margin-top: 15px;
     padding: 15px;
-    border-radius: 10px;
-    font-size: 22px;
+    border-radius: 12px;
+    font-size: 24px;
     font-weight: bold;
+    animation: fadePop 0.4s ease;
 }
 
-/* GRADE COLORS */
+@keyframes fadePop {
+    0% { transform: scale(0.6); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ===== GRADE COLORS ===== */
 .Aplus { background: #4CAF50; color: white; }
 .A { background: #2196F3; color: white; }
 .Bplus { background: #FF9800; color: white; }
@@ -83,16 +112,35 @@ button:hover {
 .C { background: #3F51B5; color: white; }
 .Dplus { background: #795548; color: white; }
 .D { background: #607D8B; color: white; }
-.E { background: #000; color: white; }
+.E { background: #000000; color: white; }
 
-/* MOBILE RESPONSIVE */
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: white;
+}
+
+/* ===== DARK MODE ===== */
+.dark-mode {
+    background: #111 !important;
+}
+
+.dark-mode .container {
+    background: #222;
+    color: white;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 600px) {
+
     body {
-        padding: 10px;
-        align-items: flex-start;
+        padding: 15px;
     }
 
     .container {
+        margin: 30px auto;
         padding: 18px;
         border-radius: 15px;
     }
@@ -103,5 +151,14 @@ button:hover {
 
     input, button {
         font-size: 14px;
+        padding: 10px;
+    }
+
+    .grade-box {
+        font-size: 20px;
+    }
+
+    .footer {
+        font-size: 10px;
     }
 }
