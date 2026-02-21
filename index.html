@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +7,77 @@
 </head>
 <body>
 
-    <!-- Login Section -->
-    <h2>Login</h2>
+    <!-- LOGIN PAGE -->
+    <div id="loginPage">
+        <h2>Login</h2>
 
-    <form>
-        <label>Username:</label><br>
-        <input type="text" name="username"><br><br>
+        <form>
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" placeholder="Enter Username">
+            </div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password"><br><br>
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter Password">
+            </div>
 
-        <button type="submit">Login</button>
-    </form>
+            <div>
+                <button type="button">Login</button>
+            </div>
+        </form>
+    </div>
 
     <hr>
 
-    <!-- Calculator Section -->
-    <h2>Plus Two Mark Calculator</h2>
+    <!-- MAIN CALCULATOR PAGE -->
+    <div id="mainPage">
+        <h2>Plus Two Mark Calculator</h2>
 
-    <form>
-        <label>Subject Name:</label><br>
-        <input type="text" name="subject"><br><br>
+        <form>
+            <div>
+                <label for="subject">Subject Name:</label><br>
+                <input type="text" id="subject" name="subject" placeholder="Enter Subject Name">
+            </div>
 
-        <h3>+1 Marks</h3>
+            <h3>+1 Marks</h3>
 
-        <label>+1 CE:</label><br>
-        <input type="number" name="p1ce"><br><br>
+            <div>
+                <label for="p1ce">+1 CE:</label><br>
+                <input type="number" id="p1ce" name="p1ce">
+            </div>
 
-        <label>+1 TE:</label><br>
-        <input type="number" name="p1te"><br><br>
+            <div>
+                <label for="p1te">+1 TE:</label><br>
+                <input type="number" id="p1te" name="p1te">
+            </div>
 
-        <h3>+2 Marks</h3>
+            <h3>+2 Marks</h3>
 
-        <label>+2 CE:</label><br>
-        <input type="number" name="p2ce"><br><br>
+            <div>
+                <label for="p2ce">+2 CE:</label><br>
+                <input type="number" id="p2ce" name="p2ce">
+            </div>
 
-        <label>+2 TE:</label><br>
-        <input type="number" name="p2te"><br><br>
+            <div>
+                <label for="p2te">+2 TE:</label><br>
+                <input type="number" id="p2te" name="p2te">
+            </div>
 
-        <label>+2 PE (if any):</label><br>
-        <input type="number" name="p2pe"><br><br>
+            <div>
+                <label for="p2pe">+2 PE (if any):</label><br>
+                <input type="number" id="p2pe" name="p2pe">
+            </div>
 
-        <button type="submit">Calculate</button>
-    </form>
+            <div>
+                <button type="button">Calculate Result</button>
+            </div>
+        </form>
+
+        <div id="output">
+            <!-- Result will appear here -->
+        </div>
+    </div>
 
 </body>
 </html>
