@@ -2,12 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plus Two Mark Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
     <div class="watermark">Minhaj</div>
 
     <!-- LOGIN PAGE -->
@@ -15,7 +14,7 @@
         <h2>🔐 Login</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
-        <button class="bubbly-button" onclick="login()">Login</button>
+        <button onclick="login()">Login</button>
     </div>
 
     <!-- MAIN CALCULATOR -->
@@ -33,9 +32,7 @@
         <input type="number" id="p2te" placeholder="+2 TE">
         <input type="number" id="p2pe" placeholder="+2 PE (if any)">
 
-        <button class="result-btn" onclick="calculate()">
-            🎯 Calculate Result
-        </button>
+        <button onclick="calculate()">Calculate Result</button>
 
         <div class="result" id="output"></div>
     </div>
@@ -45,11 +42,11 @@
         <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Confetti Library (ONLY ONCE & BEFORE script.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 | Website created by Minhaj
+    </div>
 
-    <!-- Your JavaScript -->
     <script src="script.js"></script>
-
 </body>
 </html>
