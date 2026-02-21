@@ -2,7 +2,7 @@
 function login() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
-    if(username === "admin" && password === "1234") {
+    if(username === "minhaj" && password === "2812") {
         document.getElementById('loginPage').style.display = "none";
         document.getElementById('mainPage').style.display = "block";
     } else {
