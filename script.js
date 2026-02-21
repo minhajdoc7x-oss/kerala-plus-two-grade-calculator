@@ -2,14 +2,20 @@ function login() {
     let user = document.getElementById("username").value.trim();
     let pass = document.getElementById("password").value.trim();
 
-    if(user.toLowerCase() === "admin" && pass === "1234") {
+    if(user.toLowerCase() === "minhaj" && pass === "1234") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
+
+        // 🎉 Trigger confetti
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
     } else {
         alert("Wrong Username or Password!");
     }
 }
-
 function calculate() {
     let subject = document.getElementById("subject").value;
     let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
