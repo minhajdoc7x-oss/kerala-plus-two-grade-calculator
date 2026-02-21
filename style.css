@@ -98,50 +98,44 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
-/* Mobile Responsive Adjustments – Smaller version */
+/* Mobile Responsive Fix – fits small phones */
 @media only screen and (max-width: 600px) {
     body {
-        height: auto; 
-        padding: 15px; /* slightly less padding */
+        height: auto;        /* let content expand */
+        overflow: auto;      /* allow scrolling if needed */
+        padding: 10px;       /* small padding */
+        justify-content: flex-start; /* top-align container */
     }
 
     .container {
-        width: 95%;       
-        padding: 17px;    /* reduced a bit */
+        width: 100%;          /* full width */
+        max-width: 400px;     /* optional: max width for larger phones */
+        padding: 15px;
         border-radius: 12px;
     }
 
     h2 {
-        font-size: 19px;  /* smaller title */
+        font-size: 20px;
     }
 
     h3 {
-        font-size: 15px;  /* smaller subtitle */
+        font-size: 16px;
     }
 
-    input {
-        padding: 7px;
-        font-size: 11px;
-    }
-
-    button {
-        padding: 7px;
-        font-size: 13px;
+    input, button {
+        font-size: 14px;
+        padding: 8px;
     }
 
     .result {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .watermark {
-        font-size: 47px; /* slightly smaller watermark */
+        font-size: 40px;
     }
 
     .footer {
-        font-size: 9px;
-    }
-}
-    .footer {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
