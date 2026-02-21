@@ -39,21 +39,21 @@
             font-size: 14px;
         }
 
-        /* General button styles */
-        button {
-            margin-top: 12px;
-            padding: 12px;
-            width: 100%;
-            background: linear-gradient(135deg, #ff6a00, #ee0979);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); }
+       /* Buttons */
+button {
+    margin-top: 12px;
+    padding: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); }
 
         /* LOGIN BUTTON POP ANIMATION */
         #loginBtn {
