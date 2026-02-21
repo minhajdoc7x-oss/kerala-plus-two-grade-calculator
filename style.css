@@ -4,46 +4,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100dvh;  /* BEST for mobile */
+    min-height: 100dvh;
     margin: 0;
     overflow-x: hidden;
-}
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
-        border-radius: 12px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    input, button {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
-   .container {
-    width: 95%;
-    max-width: 480px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
-    text-align: center;
-}
-
-    h2 { font-size: 18px !important; }
-    input, button { font-size: 14px !important; padding: 8px !important; }
-    .watermark { font-size: 30px !important; }
-    .footer { font-size: 9px !important; }
 }
 
 /* Container */
 .container {
+    width: 95%;
+    max-width: 480px;
     background: rgba(255, 255, 255, 0.95);
-    width: 480px;
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
     text-align: center;
@@ -52,14 +23,20 @@ body {
     transition: 0.4s;
 }
 
-.container:hover { transform: translateY(-5px); }
+.container:hover {
+    transform: translateY(-5px);
+}
 
 /* Titles */
-h2 { font-size: 26px; margin-bottom: 15px; color: #333; letter-spacing: 1px; }
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333;
+}
 
 /* Inputs */
 input {
-    width: 95%;
+    width: 100%;
     padding: 12px;
     margin: 8px 0;
     border-radius: 10px;
@@ -81,44 +58,10 @@ button {
     cursor: pointer;
     transition: 0.3s;
 }
-button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); }
 
-/* Result */
-.result { margin-top: 25px; font-size: 18px; }
-.grade-box {
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    animation: pop 0.5s ease;
+button:hover {
+    transform: scale(1.05);
 }
-@keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
-
-/* Grade Colors */
-.Aplus { background: #4CAF50; color: white; }
-.A { background: #2196F3; color: white; }
-.Bplus { background: #FF9800; color: white; }
-.B { background: #9C27B0; color: white; }
-.Cplus { background: #009688; color: white; }
-.C { background: #3F51B5; color: white; }
-.Dplus { background: #795548; color: white; }
-.D { background: #607D8B; color: white; }
-.E { background: #000; color: white; }
-
-/* Watermark */
-.watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-30deg);
-    font-size: 80px;
-    color: rgba(255,255,255,0.07);
-    font-weight: bold;
-    pointer-events: none;
-    animation: float 6s ease-in-out infinite;
-}
-@keyframes float { 0% { transform: translate(-50%, -50%) rotate(-30deg); } 50% { transform: translate(-50%, -48%) rotate(-30deg); } 100% { transform: translate(-50%, -50%) rotate(-30deg); } }
 
 /* Footer */
 .footer {
@@ -130,45 +73,20 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
     color: white;
 }
 
-/* Perfect Mobile Fit */
-@media only screen and (max-width: 600px) {
-    body {
-        height: auto;          /* allow content to fit */
-        overflow: auto;        /* scroll if necessary */
-        padding: 10px;
-        justify-content: flex-start; /* top-align container */
-    }
-
+/* Mobile */
+@media (max-width: 600px) {
     .container {
-        width: 95%;            /* almost full width */
-        max-width: 350px;      /* limit max width */
-        padding: 15px;         /* smaller padding */
-        border-radius: 10px;
+        padding: 15px;
+        border-radius: 12px;
     }
 
     h2 {
-        font-size: 18px;       /* smaller title */
-        margin-bottom: 10px;
+        font-size: 18px;
     }
 
-    input {
-        width: 100%;           /* fill container */
-        padding: 8px;          /* smaller inputs */
-        font-size: 14px;
-        margin: 6px 0;
-    }
-
+    input,
     button {
-        width: 100%;
-        padding: 10px;         /* smaller button */
         font-size: 14px;
-    }
-
-    .watermark {
-        font-size: 30px;       /* smaller watermark */
-    }
-
-    .footer {
-        font-size: 9px;
+        padding: 8px;
     }
 }
