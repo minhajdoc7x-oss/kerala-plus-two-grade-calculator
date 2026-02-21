@@ -10,22 +10,6 @@ body {
     overflow: hidden;
     transition: 0.5s;
 }
-/* LOGIN BUTTON CLICK ANIMATION */
-#loginBtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-}
-
-#loginBtn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
 
 /* Container */
 .container {
@@ -47,13 +31,12 @@ h2 { font-size: 26px; margin-bottom: 15px; color: #333; letter-spacing: 1px; }
 
 /* Inputs */
 input {
-    width: 80%;          /* smaller width */
-    padding: 8px;        /* smaller padding */
-    margin: 6px 0;       /* smaller margin */
-    border-radius: 8px;  /* slightly less rounded */
+    width: 95%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
     border: 1px solid #ccc;
-    font-size: 14px;     /* smaller font size */
-
+    font-size: 16px;
 }
 
 /* Buttons */
@@ -115,24 +98,3 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
-/* Perfect Mobile Fit */
-@media only screen and (max-width: 600px) {
-    body {
-        height: auto !important;      /* override 100vh */
-        overflow: auto !important;    /* allow scrolling */
-        padding: 10px;
-        justify-content: flex-start;
-    }
-
-    .container {
-        width: 95% !important;        /* fit screen */
-        max-width: 350px !important;
-        padding: 15px !important;
-        border-radius: 10px !important;
-    }
-
-    h2 { font-size: 18px !important; }
-    input, button { font-size: 14px !important; padding: 8px !important; }
-    .watermark { font-size: 30px !important; }
-    .footer { font-size: 9px !important; }
-}
