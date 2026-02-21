@@ -15,7 +15,7 @@
         <h2>🔐 Login</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
+        <button class="bubbly-button" onclick="login()">Login</button>
     </div>
 
     <div class="container" id="mainPage" style="display:none;">
@@ -32,8 +32,8 @@
         <input type="number" id="p2te" placeholder="+2 TE">
         <input type="number" id="p2pe" placeholder="+2 PE (if any)">
 
-        <button onclick="calculate()">Calculate Result</button>
-        <button onclick="clearFields()" style="background: #6c757d; margin-top: 5px;">Clear All</button>
+        <button class="bubbly-button" onclick="calculate()">Calculate Result</button>
+        <button class="bubbly-button" onclick="clearFields()" style="background-color: #6c757d; margin-top: 5px;">Clear All</button>
 
         <div class="result" id="output" style="min-height: 20px; padding-bottom: 20px;"></div>
     </div>
