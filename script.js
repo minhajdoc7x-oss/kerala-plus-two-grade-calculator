@@ -74,11 +74,20 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
-    // 🎉 Confetti Effect
+   // 🎉 Confetti on Grade Box Only
+const gradeBox = document.querySelector(".grade-box");
+
+if (gradeBox && typeof confetti === "function") {
+
+    const rect = gradeBox.getBoundingClientRect();
+
+    const x = (rect.left + rect.width / 2) / window.innerWidth;
+    const y = (rect.top + rect.height / 2) / window.innerHeight;
+
     confetti({
-        particleCount: 200,
-        spread: 80,
-        origin: { y: 0.6 },
+        particleCount: 150,
+        spread: 70,
+        origin: { x: x, y: y },
         colors: confettiColor
     });
 
@@ -86,9 +95,9 @@ function calculate() {
     if (grade === "A+") {
         setTimeout(() => {
             confetti({
-                particleCount: 300,
-                spread: 120,
-                origin: { y: 0.4 },
+                particleCount: 250,
+                spread: 100,
+                origin: { x: x, y: y },
                 colors: confettiColor
             });
         }, 300);
