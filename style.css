@@ -10,6 +10,26 @@ body {
     overflow: hidden;
     transition: 0.5s;
 }
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto !important;      /* override 100vh */
+        overflow: auto !important;    /* allow scrolling */
+        padding: 10px;
+        justify-content: flex-start;
+    }
+
+    .container {
+        width: 95% !important;        /* fit screen */
+        max-width: 350px !important;
+        padding: 15px !important;
+        border-radius: 10px !important;
+    }
+
+    h2 { font-size: 18px !important; }
+    input, button { font-size: 14px !important; padding: 8px !important; }
+    .watermark { font-size: 30px !important; }
+    .footer { font-size: 9px !important; }
+}
 
 /* Container */
 .container {
