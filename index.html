@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
@@ -10,7 +10,6 @@
 <body>
     <div class="watermark">Minhaj</div>
 
-    <!-- LOGIN PAGE -->
     <div class="container" id="loginPage">
         <h2>🔐 Login</h2>
         <input type="text" id="username" placeholder="Username">
@@ -18,7 +17,6 @@
         <button onclick="login()">Login</button>
     </div>
 
-    <!-- MAIN CALCULATOR -->
     <div class="container" id="mainPage" style="display:none;">
         <h2>🎓 PLUS TWO MARK CALCULATOR</h2>
 
@@ -33,17 +31,16 @@
         <input type="number" id="p2te" placeholder="+2 TE">
         <input type="number" id="p2pe" placeholder="+2 PE (if any)">
 
-       <button onclick="calculate()">Calculate Result</button>
-<button onclick="clearFields()" style="background: #6c757d; margin-top: 5px;">Clear All</button>
-        <div class="result" id="output"></div>
+        <button onclick="calculate()">Calculate Result</button>
+        <button onclick="clearFields()" style="background: #6c757d; margin-top: 5px;">Clear All</button>
+
+        <div class="result" id="output" style="min-height: 20px; padding-bottom: 20px;"></div>
     </div>
 
-    <!-- SOUND -->
     <audio id="gradeSound">
         <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- FOOTER -->
     <div class="footer">
         © 2026 | Website created by Minhaj
     </div>
