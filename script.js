@@ -1,8 +1,8 @@
 function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+    let user = document.getElementById("username").value.trim();
+    let pass = document.getElementById("password").value.trim();
 
-    if(user.toLowerCase() === "minhaj" && pass === "1234") {  // changed username here
+    if(user.toLowerCase() === "minhaj" && pass === "1234") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
     } else {
