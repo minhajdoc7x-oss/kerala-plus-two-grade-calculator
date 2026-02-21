@@ -2,7 +2,7 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user === "minhaj" && pass === "1234") {
+    if(user === "minhaj" && pass === "1234") {  // changed username here
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
     } else {
