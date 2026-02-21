@@ -138,42 +138,23 @@ button:hover {
     color: white;
 }
 
-/* DARK MODE */
-.dark-mode {
-    background: #111 !important;
-}
-
-.dark-mode .container {
-    background: #222;
-    color: white;
-}
-
-/* MOBILE OPTIMIZATION */
-@media (max-width: 600px) {
-
+@media only screen and (max-width: 600px) {
     body {
-        align-items: flex-start;
+        height: auto !important;      /* override 100vh */
+        overflow: auto !important;    /* allow scrolling */
         padding: 10px;
+        justify-content: flex-start;
     }
 
     .container {
-        max-width: 100%;
-        padding: 18px;
-        border-radius: 15px;
+        width: 95% !important;        /* fit screen */
+        max-width: 350px !important;
+        padding: 15px !important;
+        border-radius: 10px !important;
     }
 
-    h2 { font-size: 18px; }
-
-    input, button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .watermark {
-        font-size: 30px;
-    }
-
-    .footer {
-        font-size: 10px;
-    }
+    h2 { font-size: 18px !important; }
+    input, button { font-size: 14px !important; padding: 8px !important; }
+    .watermark { font-size: 30px !important; }
+    .footer { font-size: 9px !important; }
 }
