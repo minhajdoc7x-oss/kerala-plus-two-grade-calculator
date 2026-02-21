@@ -43,6 +43,23 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
-    // AUTO-SCROLL: This moves the screen down to the result automatically
+    // AUTO-SCROLL: Moves screen to the result
     outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// NEW: Clear Fields function for Step 4
+function clearFields() {
+    // Reset all input boxes
+    document.getElementById("subject").value = "";
+    document.getElementById("p1ce").value = "";
+    document.getElementById("p1te").value = "";
+    document.getElementById("p2ce").value = "";
+    document.getElementById("p2te").value = "";
+    document.getElementById("p2pe").value = "";
+
+    // Remove the result display
+    document.getElementById("output").innerHTML = "";
+    
+    // Scroll smoothly back to the top of the form
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
