@@ -98,16 +98,45 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
-/* Mobile – smaller result box */
+/* Perfect Mobile Fit */
 @media only screen and (max-width: 600px) {
-    .result {
-        font-size: 10px;  /* smaller than before */
-        margin-top: 15px; /* reduce spacing */
+    body {
+        height: auto;          /* allow content to fit */
+        overflow: auto;        /* scroll if necessary */
+        padding: 10px;
+        justify-content: flex-start; /* top-align container */
     }
 
-    .grade-box {
-        font-size: 24px;   /* smaller grade numbers */
-        padding: 10px;     /* smaller box padding */
-        margin-top: 10px;
+    .container {
+        width: 95%;            /* almost full width */
+        max-width: 350px;      /* limit max width */
+        padding: 15px;         /* smaller padding */
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 18px;       /* smaller title */
+        margin-bottom: 10px;
+    }
+
+    input {
+        width: 100%;           /* fill container */
+        padding: 8px;          /* smaller inputs */
+        font-size: 14px;
+        margin: 6px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;         /* smaller button */
+        font-size: 14px;
+    }
+
+    .watermark {
+        font-size: 30px;       /* smaller watermark */
+    }
+
+    .footer {
+        font-size: 9px;
     }
 }
