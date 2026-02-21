@@ -98,45 +98,49 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
-/* Mobile Responsive Adjustments */
+/* Mobile Responsive Adjustments – Smaller version */
 @media only screen and (max-width: 600px) {
     body {
-        height: auto; /* allow scrolling on mobile */
-        padding: 20px;
+        height: auto; 
+        padding: 15px; /* slightly less padding */
     }
 
     .container {
-        width: 95%;       /* almost full width */
-        padding: 20px;    /* reduce padding */
-        border-radius: 15px;
+        width: 95%;       
+        padding: 17px;    /* reduced a bit */
+        border-radius: 12px;
     }
 
     h2 {
-        font-size: 22px;  /* smaller title */
+        font-size: 19px;  /* smaller title */
     }
 
     h3 {
-        font-size: 18px;  /* smaller subtitle */
+        font-size: 15px;  /* smaller subtitle */
     }
 
     input {
-        padding: 10px;
-        font-size: 14px;
+        padding: 7px;
+        font-size: 11px;
     }
 
     button {
-        padding: 10px;
-        font-size: 16px;
+        padding: 7px;
+        font-size: 13px;
     }
 
     .result {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .watermark {
-        font-size: 50px; /* smaller watermark */
+        font-size: 47px; /* slightly smaller watermark */
     }
 
+    .footer {
+        font-size: 9px;
+    }
+}
     .footer {
         font-size: 12px;
     }
