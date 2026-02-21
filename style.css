@@ -76,3 +76,52 @@ button:hover {
     font-weight: bold;
     pointer-events: none;
 }
+/* ===============================
+   Bubbly Login Button Animation
+================================= */
+
+.bubbly-button {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.bubbly-button:active {
+    transform: scale(0.95);
+}
+
+/* Bubble Effect */
+.bubbly-button::before,
+.bubbly-button::after {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: 0;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.bubbly-button:active::before {
+    top: -60%;
+    background-image:
+        radial-gradient(circle, #ffffff 20%, transparent 20%),
+        radial-gradient(circle, #ffffff 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%;
+    background-position: 10% 90%, 90% 10%;
+}
+
+.bubbly-button:active::after {
+    bottom: -60%;
+    background-image:
+        radial-gradient(circle, #ffffff 20%, transparent 20%),
+        radial-gradient(circle, #ffffff 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%;
+    background-position: 10% 10%, 90% 90%;
+}
