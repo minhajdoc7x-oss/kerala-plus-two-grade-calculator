@@ -64,24 +64,16 @@ button:hover {
     color: white;
 }
 
-/* Mobile */
 @media (max-width: 600px) {
-
     body {
-        padding: 0;
+        padding: 15px;
     }
 
     .container {
         width: 100%;
         max-width: 100%;
-        min-height: 100dvh;
-        border-radius: 0;
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        border-radius: 16px;
     }
-
 }
     h2 {
         font-size: 18px;
