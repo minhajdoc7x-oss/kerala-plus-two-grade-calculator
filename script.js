@@ -40,23 +40,3 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 }
-
-    confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { x: x, y: y },
-        colors: confettiColor
-    });
-
-    // Extra blast for A+
-    if (grade === "A+") {
-        setTimeout(() => {
-            confetti({
-                particleCount: 250,
-                spread: 100,
-                origin: { x: x, y: y },
-                colors: confettiColor
-            });
-        }, 300);
-    }
-}
