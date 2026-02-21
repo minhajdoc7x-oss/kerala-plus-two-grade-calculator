@@ -98,53 +98,16 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
-/* Mobile Responsive Fix – fits small phones */
+/* Mobile – smaller result box */
 @media only screen and (max-width: 600px) {
-    body {
-        height: auto;        /* let content expand */
-        overflow: auto;      /* allow scrolling if needed */
-        padding: 10px;       /* small padding */
-        justify-content: flex-start; /* top-align container */
-    }
-
-   /* Mobile Container Smaller */
-@media only screen and (max-width: 600px) {
-    body {
-        height: auto;         /* allow scrolling */
-        overflow: auto;       /* scroll if needed */
-        padding: 10px;
-        justify-content: flex-start; /* top-align container */
-    }
-
-    .container {
-        width: 90%;           /* smaller width */
-        max-width: 350px;     /* max width for phones */
-        padding: 15px;        /* smaller padding inside box */
-        border-radius: 10px;
-    }
-
-    h2 {
-        font-size: 18px;      /* smaller title */
-    }
-
-    h3 {
-        font-size: 15px;      /* smaller subtitle */
-    }
-
-    input, button {
-        font-size: 13px;      /* smaller inputs/buttons */
-        padding: 7px;
-    }
-
     .result {
-        font-size: 13px;
+        font-size: 10px;  /* smaller than before */
+        margin-top: 15px; /* reduce spacing */
     }
 
-    .watermark {
-        font-size: 35px;      /* smaller watermark */
-    }
-
-    .footer {
-        font-size: 9px;
+    .grade-box {
+        font-size: 24px;   /* smaller grade numbers */
+        padding: 10px;     /* smaller box padding */
+        margin-top: 10px;
     }
 }
