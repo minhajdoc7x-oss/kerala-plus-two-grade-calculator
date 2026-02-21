@@ -10,6 +10,22 @@ body {
     overflow: hidden;
     transition: 0.5s;
 }
+/* LOGIN BUTTON CLICK ANIMATION */
+#loginBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#loginBtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
 
 /* Container */
 .container {
