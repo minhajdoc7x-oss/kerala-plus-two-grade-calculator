@@ -79,13 +79,7 @@ button:hover {
    Bubbly Login Button Animation
 ================================= */
 
-.bubbly-button {
-    position: relative;
-    background: linear-gradient(135deg, #ff6a00, #ee0979);
-    color: white;
-    overflow: hidden;
-    transition: transform 0.15s ease;
-}
+
 
 .bubbly-button:hover {
     transform: scale(1.05);
