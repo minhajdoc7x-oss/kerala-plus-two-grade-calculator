@@ -1,83 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plus Two Mark Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="watermark">Minhaj</div>
 
     <!-- LOGIN PAGE -->
-    <div id="loginPage">
-        <h2>Login</h2>
-
-        <form>
-            <div>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" placeholder="Enter Username">
-            </div>
-
-            <div>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" placeholder="Enter Password">
-            </div>
-
-            <div>
-                <button type="button">Login</button>
-            </div>
-        </form>
+    <div class="container" id="loginPage">
+        <h2>🔐 Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Login</button>
     </div>
 
-    <hr>
+    <!-- MAIN CALCULATOR -->
+    <div class="container" id="mainPage" style="display:none;">
+        <h2>🎓 PLUS TWO MARK CALCULATOR</h2>
 
-    <!-- MAIN CALCULATOR PAGE -->
-    <div id="mainPage">
-        <h2>Plus Two Mark Calculator</h2>
+        <input type="text" id="subject" placeholder="Enter Subject Name">
 
-        <form>
-            <div>
-                <label for="subject">Subject Name:</label><br>
-                <input type="text" id="subject" name="subject" placeholder="Enter Subject Name">
-            </div>
+        <h3>+1 Marks</h3>
+        <input type="number" id="p1ce" placeholder="+1 CE">
+        <input type="number" id="p1te" placeholder="+1 TE">
 
-            <h3>+1 Marks</h3>
+        <h3>+2 Marks</h3>
+        <input type="number" id="p2ce" placeholder="+2 CE">
+        <input type="number" id="p2te" placeholder="+2 TE">
+        <input type="number" id="p2pe" placeholder="+2 PE (if any)">
 
-            <div>
-                <label for="p1ce">+1 CE:</label><br>
-                <input type="number" id="p1ce" name="p1ce">
-            </div>
+        <button onclick="calculate()">Calculate Result</button>
 
-            <div>
-                <label for="p1te">+1 TE:</label><br>
-                <input type="number" id="p1te" name="p1te">
-            </div>
-
-            <h3>+2 Marks</h3>
-
-            <div>
-                <label for="p2ce">+2 CE:</label><br>
-                <input type="number" id="p2ce" name="p2ce">
-            </div>
-
-            <div>
-                <label for="p2te">+2 TE:</label><br>
-                <input type="number" id="p2te" name="p2te">
-            </div>
-
-            <div>
-                <label for="p2pe">+2 PE (if any):</label><br>
-                <input type="number" id="p2pe" name="p2pe">
-            </div>
-
-            <div>
-                <button type="button">Calculate Result</button>
-            </div>
-        </form>
-
-        <div id="output">
-            <!-- Result will appear here -->
-        </div>
+        <div class="result" id="output"></div>
     </div>
 
+    <!-- SOUND -->
+    <audio id="gradeSound">
+        <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 | Website created by Minhaj
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
