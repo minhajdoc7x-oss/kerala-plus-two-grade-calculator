@@ -6,7 +6,7 @@ function login() {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
 
-        // 🎉 Trigger confetti
+        // 🎉 Confetti
         confetti({
             particleCount: 150,
             spread: 70,
