@@ -1,7 +1,8 @@
 // LOGIN FUNCTION
 function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    
     if(username === "minhaj" && password === "2812") {
         document.getElementById('loginPage').style.display = "none";
         document.getElementById('mainPage').style.display = "block";
@@ -9,7 +10,6 @@ function login() {
         alert("Incorrect username or password!");
     }
 }
-
 // CALCULATOR FUNCTION
 function calculate() {
     const p1ce = parseFloat(document.getElementById('p1ce').value) || 0;
