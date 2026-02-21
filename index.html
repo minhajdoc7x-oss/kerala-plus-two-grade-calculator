@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="watermark">Minhaj</div>
 
     <!-- LOGIN PAGE -->
@@ -14,7 +15,8 @@
         <h2>🔐 Login</h2>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
-        <button onclick="login()">Login</button>
+        
+        <!-- Bubbly Login Button -->
         <button class="bubbly-button" onclick="login()">Login</button>
     </div>
 
@@ -33,7 +35,10 @@
         <input type="number" id="p2te" placeholder="+2 TE">
         <input type="number" id="p2pe" placeholder="+2 PE (if any)">
 
-        <button onclick="calculate()">Calculate Result</button>
+        <!-- Result Button with Icon -->
+        <button class="result-btn" onclick="calculate()">
+            🎯 Calculate Result
+        </button>
 
         <div class="result" id="output"></div>
     </div>
@@ -43,11 +48,10 @@
         <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- FOOTER -->
-    <div class="footer">
-        © 2026 | Website created by Minhaj
-    </div>
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script src="script.js"></script>
+
 </body>
 </html>
