@@ -45,4 +45,12 @@ function calculate() {
         "<h3>Subject: " + subject + "</h3>" +
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+       // 🎉 Celebrate high grades
+    if (grade === "A+" || grade === "A") {
+        confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.6 },
+        });
+    }
 }
