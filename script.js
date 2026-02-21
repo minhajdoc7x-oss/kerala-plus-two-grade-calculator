@@ -11,6 +11,7 @@ function login() {
 }
 
 function calculate() {
+
     let subject = document.getElementById("subject").value;
     let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
     let p1te = parseInt(document.getElementById("p1te").value) || 0;
@@ -22,21 +23,74 @@ function calculate() {
 
     let grade = "";
     let gradeClass = "";
+    let confettiColor = ["#ffffff"];
 
-    if (total >= 180) { grade = "A+"; gradeClass = "Aplus"; }
-    else if (total >= 160) { grade = "A"; gradeClass = "A"; }
-    else if (total >= 140) { grade = "B+"; gradeClass = "Bplus"; }
-    else if (total >= 120) { grade = "B"; gradeClass = "B"; }
-    else if (total >= 100) { grade = "C+"; gradeClass = "Cplus"; }
-    else if (total >= 80) { grade = "C"; gradeClass = "C"; }
-    else if (total >= 60) { grade = "D+"; gradeClass = "Dplus"; }
-    else if (total >= 40) { grade = "D"; gradeClass = "D"; }
-    else { grade = "E"; gradeClass = "E"; }
+    if (total >= 180) { 
+        grade = "A+"; 
+        gradeClass = "Aplus"; 
+        confettiColor = ["#FFD700", "#FFA500", "#FF0000"]; // gold celebration
+    }
+    else if (total >= 160) { 
+        grade = "A"; 
+        gradeClass = "A"; 
+        confettiColor = ["#2196F3", "#00BCD4"];
+    }
+    else if (total >= 140) { 
+        grade = "B+"; 
+        gradeClass = "Bplus"; 
+    }
+    else if (total >= 120) { 
+        grade = "B"; 
+        gradeClass = "B"; 
+    }
+    else if (total >= 100) { 
+        grade = "C+"; 
+        gradeClass = "Cplus"; 
+    }
+    else if (total >= 80) { 
+        grade = "C"; 
+        gradeClass = "C"; 
+    }
+    else if (total >= 60) { 
+        grade = "D+"; 
+        gradeClass = "Dplus"; 
+    }
+    else if (total >= 40) { 
+        grade = "D"; 
+        gradeClass = "D"; 
+    }
+    else { 
+        grade = "E"; 
+        gradeClass = "E"; 
+        confettiColor = ["#ff0000"];
+    }
 
+    // Play Sound
     document.getElementById("gradeSound").play();
 
+    // Show Result
     document.getElementById("output").innerHTML =
         "<h3>Subject: " + subject + "</h3>" +
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+
+    // 🎉 Confetti Effect
+    confetti({
+        particleCount: 200,
+        spread: 80,
+        origin: { y: 0.6 },
+        colors: confettiColor
+    });
+
+    // Extra blast for A+
+    if (grade === "A+") {
+        setTimeout(() => {
+            confetti({
+                particleCount: 300,
+                spread: 120,
+                origin: { y: 0.4 },
+                colors: confettiColor
+            });
+        }, 300);
+    }
 }
