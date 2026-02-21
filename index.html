@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Plus Two Mark Calculator</title>
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    width: 480px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Bigger Title */
+h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* Input Fields */
+input {
+    width: 95%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    margin-top: 12px;
+    padding: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Result */
+.result {
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+.grade-box {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Grade Colors */
+.Aplus { background: #4CAF50; color: white; }
+.A { background: #2196F3; color: white; }
+.Bplus { background: #FF9800; color: white; }
+.B { background: #9C27B0; color: white; }
+.Cplus { background: #009688; color: white; }
+.C { background: #3F51B5; color: white; }
+.Dplus { background: #795548; color: white; }
+.D { background: #607D8B; color: white; }
+.E { background: #000; color: white; }
+
+/* Watermark */
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 80px;
+    color: rgba(255,255,255,0.07);
+    font-weight: bold;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(-50%, -50%) rotate(-30deg); }
+    50% { transform: translate(-50%, -48%) rotate(-30deg); }
+    100% { transform: translate(-50%, -50%) rotate(-30deg); }
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #111 !important;
+}
+
+.dark-mode .container {
+    background: #222;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<div class="watermark">Minhaj</div>
+
+<!-- LOGIN PAGE -->
+<div class="container" id="loginPage">
+    <h2>🔐 Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+</div>
+
+<!-- MAIN CALCULATOR -->
+<div class="container" id="mainPage" style="display:none;">
+    <h2>🎓 PLUS TWO MARK CALCULATOR</h2>
+
+
+    <input type="text" id="subject" placeholder="Enter Subject Name">
+
+    <h3>+1 Marks</h3>
+    <input type="number" id="p1ce" placeholder="+1 CE">
+    <input type="number" id="p1te" placeholder="+1 TE">
+
+    <h3>+2 Marks</h3>
+    <input type="number" id="p2ce" placeholder="+2 CE">
+    <input type="number" id="p2te" placeholder="+2 TE">
+    <input type="number" id="p2pe" placeholder="+2 PE (if any)">
+
+    <button onclick="calculate()">Calculate Result</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<!-- SOUND -->
+<audio id="gradeSound">
+    <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 | Website created by Minhaj
+</div>
+
+<script>
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    if(user === "admin" && pass === "1234") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("mainPage").style.display = "block";
+    } else {
+        alert("Wrong Username or Password!");
+    }
+}
+
+
+
+
+function calculate() {
+
+    let subject = document.getElementById("subject").value;
+    let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
+    let p1te = parseInt(document.getElementById("p1te").value) || 0;
+    let p2ce = parseInt(document.getElementById("p2ce").value) || 0;
+    let p2te = parseInt(document.getElementById("p2te").value) || 0;
+    let p2pe = parseInt(document.getElementById("p2pe").value) || 0;
+
+    let total = p1ce + p1te + p2ce + p2te + p2pe;
+
+    let grade = "";
+    let gradeClass = "";
+
+    if (total >= 180) { grade = "A+"; gradeClass = "Aplus"; }
+    else if (total >= 160) { grade = "A"; gradeClass = "A"; }
+    else if (total >= 140) { grade = "B+"; gradeClass = "Bplus"; }
+    else if (total >= 120) { grade = "B"; gradeClass = "B"; }
+    else if (total >= 100) { grade = "C+"; gradeClass = "Cplus"; }
+    else if (total >= 80) { grade = "C"; gradeClass = "C"; }
+    else if (total >= 60) { grade = "D+"; gradeClass = "Dplus"; }
+    else if (total >= 40) { grade = "D"; gradeClass = "D"; }
+    else { grade = "E"; gradeClass = "E"; }
+
+    document.getElementById("gradeSound").play();
+
+    document.getElementById("output").innerHTML =
+        "<h3>Subject: " + subject + "</h3>" +
+        "<h3>Total Marks: " + total + " / 200</h3>" +
+        "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+}
+</script>
+
+</body>
+</html>
