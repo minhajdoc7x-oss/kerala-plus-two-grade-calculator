@@ -2,7 +2,7 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user === "minhaj_7x" && pass === "1234") {
+    if(user === "admin" && pass === "1234") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
     } else {
