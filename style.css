@@ -11,10 +11,10 @@ body {
     transition: 0.5s;
 }
 
-/* Container */
 .container {
     background: rgba(255, 255, 255, 0.95);
-    width: 480px;
+    width: 90%;       /* flexible width */
+    max-width: 480px; /* still limits it for big screens */
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
@@ -98,3 +98,22 @@ button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
 /* Dark Mode */
 .dark-mode { background: #111 !important; }
 .dark-mode .container { background: #222; color: white; }
+/* Mobile adjustments */
+@media (max-width: 500px) {
+    h2 {
+        font-size: 22px;  /* smaller title */
+    }
+
+    input, button {
+        font-size: 16px;  /* slightly smaller */
+        padding: 10px;
+    }
+
+    .watermark {
+        font-size: 50px; /* smaller watermark */
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
