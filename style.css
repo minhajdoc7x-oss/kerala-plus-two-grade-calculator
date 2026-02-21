@@ -8,6 +8,14 @@ button {
     cursor: pointer;
     border: none;
 }
+.grade-box {
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
 /* Container */
 .container {
     width: 480px;
