@@ -31,12 +31,13 @@ h2 { font-size: 26px; margin-bottom: 15px; color: #333; letter-spacing: 1px; }
 
 /* Inputs */
 input {
-    width: 95%;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 8px;
+    width: 80%;          /* smaller width */
+    padding: 8px;        /* smaller padding */
+    margin: 6px 0;       /* smaller margin */
+    border-radius: 8px;  /* slightly less rounded */
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 14px;     /* smaller font size */
+
 }
 
 /* Buttons */
