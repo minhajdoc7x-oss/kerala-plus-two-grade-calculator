@@ -6,6 +6,7 @@ button {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
+    border: none;
 }
 /* Container */
 .container {
@@ -80,46 +81,35 @@ button:hover {
 
 .bubbly-button {
     position: relative;
-    overflow: hidden;
     background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    transition: transform 0.15s ease;
+}
+
+.bubbly-button:hover {
+    transform: scale(1.05);
 }
 
 .bubbly-button:active {
     transform: scale(0.95);
 }
 
-/* Bubble Effect */
-.bubbly-button::before,
-.bubbly-button::after {
+/* Ripple Bubble */
+.bubbly-button::before {
     content: "";
     position: absolute;
-    width: 140%;
-    height: 100%;
-    left: -20%;
-    z-index: 0;
-    background-repeat: no-repeat;
-    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 10%, transparent 10%);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: transform 0.4s ease-out;
 }
 
 .bubbly-button:active::before {
-    top: -60%;
-    background-image:
-        radial-gradient(circle, #ffffff 20%, transparent 20%),
-        radial-gradient(circle, #ffffff 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%;
-    background-position: 10% 90%, 90% 10%;
-}
-
-.bubbly-button:active::after {
-    bottom: -60%;
-    background-image:
-        radial-gradient(circle, #ffffff 20%, transparent 20%),
-        radial-gradient(circle, #ffffff 20%, transparent 20%);
-    background-size: 15% 15%, 20% 20%;
-    background-position: 10% 10%, 90% 90%;
+    transform: translate(-50%, -50%) scale(1);
 }
