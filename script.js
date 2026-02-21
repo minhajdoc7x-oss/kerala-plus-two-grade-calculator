@@ -72,7 +72,7 @@ function calculate() {
     document.getElementById("output").innerHTML =
         "<h3>Subject: " + subject + "</h3>" +
         "<h3>Total Marks: " + total + " / 200</h3>" +
-        "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+       "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
    // 🎉 Confetti on Grade Box Only
 const gradeBox = document.querySelector(".grade-box");
