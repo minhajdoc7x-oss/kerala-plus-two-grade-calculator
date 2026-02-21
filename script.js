@@ -33,10 +33,16 @@ function calculate() {
     else if (total >= 40) { grade = "D"; gradeClass = "D"; }
     else { grade = "E"; gradeClass = "E"; }
 
+    // Play sound
     document.getElementById("gradeSound").play();
 
-    document.getElementById("output").innerHTML =
+    // Display Result
+    let outputDiv = document.getElementById("output");
+    outputDiv.innerHTML =
         "<h3>Subject: " + subject + "</h3>" +
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+
+    // AUTO-SCROLL: This moves the screen down to the result automatically
+    outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
