@@ -2,6 +2,7 @@ function login() {
     let user = document.getElementById("username").value.trim();
     let pass = document.getElementById("password").value.trim();
 
+    // ✅ Password changed to 2812
     if(user.toLowerCase() === "minhaj" && pass === "2812") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
@@ -16,6 +17,7 @@ function login() {
         alert("Wrong Username or Password!");
     }
 }
+
 function calculate() {
     let subject = document.getElementById("subject").value;
     let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
@@ -45,7 +47,8 @@ function calculate() {
         "<h3>Subject: " + subject + "</h3>" +
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
-       // 🎉 Celebrate high grades
+
+    // 🎉 Celebrate high grades
     if (grade === "A+" || grade === "A") {
         confetti({
             particleCount: 200,
