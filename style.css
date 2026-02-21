@@ -53,6 +53,7 @@ input {
     box-sizing: border-box;
 }
 
+/* Buttons Updated for Two-Button Layout */
 button {
     margin-top: 10px;
     padding: 12px;
@@ -65,22 +66,32 @@ button {
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
+    display: block; /* Ensures clean stacking */
 }
 
-button:hover { transform: scale(1.05); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); }
+button:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.3); 
+}
 
 .result { margin-top: 20px; font-size: 18px; }
 
+/* Grade Box with added Glow/Depth */
 .grade-box {
-    margin-top: 10px;
-    padding: 12px;
+    margin-top: 15px;
+    padding: 15px;
     border-radius: 10px;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
     animation: pop 0.5s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Depth for confetti moment */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle shine */
 }
 
-@keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes pop { 
+    0% { transform: scale(0.5); opacity: 0; } 
+    100% { transform: scale(1); opacity: 1; } 
+}
 
 /* Grade Colors */
 .Aplus { background: #4CAF50; color: white; }
@@ -105,7 +116,14 @@ button:hover { transform: scale(1.05); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
     z-index: 1;
 }
 
-.footer { position: relative; padding: 20px 0; text-align: center; width: 100%; font-size: 14px; color: white; }
+.footer { 
+    position: relative; 
+    padding: 20px 0; 
+    text-align: center; 
+    width: 100%; 
+    font-size: 14px; 
+    color: white; 
+}
 
 /* Mobile adjustments */
 @media (max-width: 480px) {
@@ -117,5 +135,5 @@ button:hover { transform: scale(1.05); box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
     .container { padding: 15px; }
     h2 { font-size: 20px; }
     h3 { font-size: 16px; margin: 8px 0 4px 0; }
-    .grade-box { font-size: 22px; padding: 10px; }
+    .grade-box { font-size: 24px; padding: 12px; }
 }
