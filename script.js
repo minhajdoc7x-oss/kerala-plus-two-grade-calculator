@@ -43,32 +43,42 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
-    // AUTO-SCROLL: Moves screen to the result
+    // AUTO-SCROLL
     outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-    // CONFETTI EFFECT: Triggers for any grade better than E
+    // CONFETTI EFFECT
     if (grade !== "E") {
         confetti({
             particleCount: 150,
             spread: 70,
             origin: { y: 0.6 },
-            colors: ['#4e73df', '#1cc88a', '#ff6a00', '#ee0979']
+            colors: ['#ff0081', '#ff6a00', '#1cc88a', '#4e73df']
         });
     }
 }
 
 function clearFields() {
-    // Reset all input boxes
     document.getElementById("subject").value = "";
     document.getElementById("p1ce").value = "";
     document.getElementById("p1te").value = "";
     document.getElementById("p2ce").value = "";
     document.getElementById("p2te").value = "";
     document.getElementById("p2pe").value = "";
-
-    // Remove the result display
     document.getElementById("output").innerHTML = "";
-    
-    // Scroll smoothly back to the top of the form
     window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// --- NEW: BUBBLY BUTTON ANIMATION TRIGGER ---
+const animateButton = function(e) {
+    e.target.classList.remove('animate');
+    e.target.classList.add('animate');
+    setTimeout(function(){
+        e.target.classList.remove('animate');
+    }, 700);
+};
+
+// Apply animation to all buttons with the bubbly-button class
+const bubblyButtons = document.getElementsByClassName("bubbly-button");
+for (let i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
 }
