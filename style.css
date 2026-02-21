@@ -1,109 +1,73 @@
-/* ===== BODY ===== */
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #4e73df, #1cc88a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
     margin: 0;
-    padding: 20px;
-    min-height: 100vh;
+    overflow: hidden;
+    transition: 0.5s;
 }
 
-/* ===== CONTAINER ===== */
+/* Container */
 .container {
     background: rgba(255, 255, 255, 0.95);
-    width: 100%;
-    max-width: 480px;
-    margin: 60px auto;
-    padding: 25px;
+    width: 480px;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 15px 40px rgba(0,0,0,0.3);
     text-align: center;
-    transition: 0.3s ease;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s;
 }
 
-.container:hover {
-    transform: translateY(-5px);
-}
+.container:hover { transform: translateY(-5px); }
 
-/* ===== TITLES ===== */
-h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #333;
-}
+/* Titles */
+h2 { font-size: 26px; margin-bottom: 15px; color: #333; letter-spacing: 1px; }
 
-h3 {
-    margin: 10px 0 5px;
-    color: #444;
-}
-
-/* ===== INPUTS ===== */
+/* Inputs */
 input {
-    width: 100%;
-    padding: 10px;
+    width: 95%;
+    padding: 12px;
     margin: 8px 0;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 1px solid #ccc;
-    font-size: 15px;
-    box-sizing: border-box;
+    font-size: 16px;
 }
 
-/* ===== BUTTON ===== */
+/* Buttons */
 button {
-    margin-top: 15px;
+    margin-top: 12px;
     padding: 12px;
     width: 100%;
     background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: white;
     border: none;
     border-radius: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
+button:hover { transform: scale(1.08); box-shadow: 0px 8px 20px rgba(0,0,0,0.3); }
 
-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-}
-
-/* ===== LOGIN BUTTON SPECIAL ===== */
-#loginBtn {
-    background-color: #4CAF50;
-}
-
-#loginBtn:active {
-    animation: bubble 0.3s ease;
-}
-
-@keyframes bubble {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.15); }
-    60% { transform: scale(0.95); }
-    100% { transform: scale(1); }
-}
-
-/* ===== RESULT SECTION ===== */
-.result {
-    margin-top: 20px;
-    font-size: 16px;
-}
-
+/* Result */
+.result { margin-top: 25px; font-size: 18px; }
 .grade-box {
     margin-top: 15px;
     padding: 15px;
-    border-radius: 12px;
-    font-size: 24px;
+    border-radius: 10px;
+    font-size: 28px;
     font-weight: bold;
-    animation: fadePop 0.4s ease;
+    animation: pop 0.5s ease;
 }
+@keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
-@keyframes fadePop {
-    0% { transform: scale(0.6); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-/* ===== GRADE COLORS ===== */
+/* Grade Colors */
 .Aplus { background: #4CAF50; color: white; }
 .A { background: #2196F3; color: white; }
 .Bplus { background: #FF9800; color: white; }
@@ -112,53 +76,25 @@ button:hover {
 .C { background: #3F51B5; color: white; }
 .Dplus { background: #795548; color: white; }
 .D { background: #607D8B; color: white; }
-.E { background: #000000; color: white; }
+.E { background: #000; color: white; }
 
-/* ===== FOOTER ===== */
-.footer {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 14px;
-    color: white;
+/* Watermark */
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 80px;
+    color: rgba(255,255,255,0.07);
+    font-weight: bold;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
 }
+@keyframes float { 0% { transform: translate(-50%, -50%) rotate(-30deg); } 50% { transform: translate(-50%, -48%) rotate(-30deg); } 100% { transform: translate(-50%, -50%) rotate(-30deg); } }
 
-/* ===== DARK MODE ===== */
-.dark-mode {
-    background: #111 !important;
-}
+/* Footer */
+.footer { position: fixed; bottom: 10px; text-align: center; width: 100%; font-size: 14px; color: white; }
 
-.dark-mode .container {
-    background: #222;
-    color: white;
-}
-
-/* ===== MOBILE RESPONSIVE ===== */
-@media (max-width: 600px) {
-
-    body {
-        padding: 15px;
-    }
-
-    .container {
-        margin: 30px auto;
-        padding: 18px;
-        border-radius: 15px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    input, button {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .grade-box {
-        font-size: 20px;
-    }
-
-    .footer {
-        font-size: 10px;
-    }
-}
+/* Dark Mode */
+.dark-mode { background: #111 !important; }
+.dark-mode .container { background: #222; color: white; }
