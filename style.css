@@ -1,103 +1,43 @@
-/* RESET & BASE */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Watermark background */
-.watermark {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 8rem;
-    color: rgba(0,0,0,0.05);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* CONTAINER */
-.container {
-    max-width: 400px;
-    width: 90%;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* HEADINGS */
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* INPUTS & BUTTONS */
-input[type="text"],
-input[type="password"],
-input[type="number"],
-button {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
-    font-size: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-/* BUTTON STYLE */
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover {
-    background-color: #45a049;
-}
-
-/* RESULT */
-.result {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: #e7f3fe;
-    border-left: 6px solid #2196F3;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin: 40px 0 20px 0;
-    font-size: 0.9rem;
-    color: #555;
-}
-
-/* MOBILE MEDIA QUERY */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.5rem;
+/* Mobile Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+    body {
+        height: auto; /* allow scrolling */
+        padding: 20px;
     }
-    h3 {
-        font-size: 1.1rem;
-    }
-    input, button {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
+
     .container {
-        margin: 20px auto;
-        padding: 15px;
+        width: 95%;       /* almost full width */
+        padding: 20px;    /* reduce padding */
+        border-radius: 15px;
     }
+
+    h2 {
+        font-size: 22px;  /* smaller title */
+    }
+
+    h3 {
+        font-size: 18px;  /* smaller subtitle */
+    }
+
+    input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .result {
+        font-size: 16px;
+    }
+
     .watermark {
-        font-size: 5rem;
+        font-size: 50px; /* smaller watermark */
+    }
+
+    .footer {
+        font-size: 12px;
     }
 }
