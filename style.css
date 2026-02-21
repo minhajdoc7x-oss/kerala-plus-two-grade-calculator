@@ -10,29 +10,34 @@ body {
     overflow: hidden;
     transition: 0.5s;
 }
-/* LOGIN BUTTON SPECIFIC STYLE AND CLICK ANIMATION */
+/* LOGIN BUTTON POP ANIMATION */
 #loginBtn {
-    background-color: #4CAF50;        /* green button */
+    background-color: #4CAF50;
     color: white;
     padding: 12px 25px;
     font-size: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.3s;
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Hover effect for login button */
+/* Hover effect */
 #loginBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    background-color: #45a049;        /* slightly darker green */
+    background-color: #45a049;
 }
 
-/* Click/press animation */
+/* Pop animation on click */
 #loginBtn:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: pop 0.2s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 /* Container */
 .container {
