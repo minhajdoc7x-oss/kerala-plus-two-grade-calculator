@@ -1,16 +1,14 @@
-/* BODY */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #4e73df, #1cc88a);
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;   /* changed */
+    min-height: 100vh;         /* changed */
     flex-direction: column;
     margin: 0;
-    padding: 20px;
+    padding: 20px;             /* added */
 }
-
 /* CONTAINER */
 .container {
     background: rgba(255,255,255,0.95);
