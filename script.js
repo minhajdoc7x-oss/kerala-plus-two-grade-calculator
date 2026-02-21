@@ -1,32 +1,44 @@
 function login() {
-    let user = document.getElementById("username").value.trim();
-    let pass = document.getElementById("password").value.trim();
+    const userInput = document.getElementById("username");
+    const passInput = document.getElementById("password");
 
-    // ✅ Password changed to 2812
-    if(user.toLowerCase() === "minhaj" && pass === "2812") {
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("mainPage").style.display = "block";
+    if (!userInput || !passInput) return;
 
-        // 🎉 Confetti
-        confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 },
-        });
+    const user = userInput.value.trim().toLowerCase();
+    const pass = passInput.value.trim();
+
+    // Login check
+    if (user === "minhaj" && pass === "2812") {
+        const loginPage = document.getElementById("loginPage");
+        const mainPage = document.getElementById("mainPage");
+
+        if (loginPage) loginPage.style.display = "none";
+        if (mainPage) mainPage.style.display = "block";
+
+        // Confetti (check if library exists)
+        if (typeof confetti === "function") {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
     } else {
         alert("Wrong Username or Password!");
     }
 }
 
 function calculate() {
-    let subject = document.getElementById("subject").value;
-    let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
-    let p1te = parseInt(document.getElementById("p1te").value) || 0;
-    let p2ce = parseInt(document.getElementById("p2ce").value) || 0;
-    let p2te = parseInt(document.getElementById("p2te").value) || 0;
-    let p2pe = parseInt(document.getElementById("p2pe").value) || 0;
+    const subject = document.getElementById("subject")?.value || "Unknown";
 
-    let total = p1ce + p1te + p2ce + p2te + p2pe;
+    const p1ce = parseInt(document.getElementById("p1ce")?.value) || 0;
+    const p1te = parseInt(document.getElementById("p1te")?.value) || 0;
+    const p2ce = parseInt(document.getElementById("p2ce")?.value) || 0;
+    const p2te = parseInt(document.getElementById("p2te")?.value) || 0;
+    const p2pe = parseInt(document.getElementById("p2pe")?.value) || 0;
+
+    const total = p1ce + p1te + p2ce + p2te + p2pe;
 
     let grade = "";
     let gradeClass = "";
@@ -41,19 +53,27 @@ function calculate() {
     else if (total >= 40) { grade = "D"; gradeClass = "D"; }
     else { grade = "E"; gradeClass = "E"; }
 
-    document.getElementById("gradeSound").play();
+    // Play sound safely
+    const sound = document.getElementById("gradeSound");
+    if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(() => {});
+    }
 
-    document.getElementById("output").innerHTML =
-        "<h3>Subject: " + subject + "</h3>" +
-        "<h3>Total Marks: " + total + " / 200</h3>" +
-        "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+    const output = document.getElementById("output");
+    if (output) {
+        output.innerHTML =
+            `<h3>Subject: ${subject}</h3>
+             <h3>Total Marks: ${total} / 200</h3>
+             <div class="grade-box ${gradeClass}">GRADE: ${grade}</div>`;
+    }
 
-    // 🎉 Celebrate high grades
-    if (grade === "A+" || grade === "A") {
+    // Celebrate high grades
+    if ((grade === "A+" || grade === "A") && typeof confetti === "function") {
         confetti({
             particleCount: 200,
             spread: 100,
-            origin: { y: 0.6 },
+            origin: { y: 0.6 }
         });
     }
 }
