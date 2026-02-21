@@ -2,7 +2,8 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    if(user === "admin" && pass === "1234") {
+    // Updated Username and Password
+    if(user === "minhaj" && pass === "2812") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
     } else {
@@ -68,7 +69,7 @@ function clearFields() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --- NEW: BUBBLY BUTTON ANIMATION TRIGGER ---
+// BUBBLY BUTTON ANIMATION TRIGGER
 const animateButton = function(e) {
     e.target.classList.remove('animate');
     e.target.classList.add('animate');
