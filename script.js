@@ -1,42 +1,30 @@
+// LOGIN FUNCTION
 function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-
-    if(user === "admin" && pass === "1234") {
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("mainPage").style.display = "block";
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if(username === "admin" && password === "1234") {
+        document.getElementById('loginPage').style.display = "none";
+        document.getElementById('mainPage').style.display = "block";
     } else {
-        alert("Wrong Username or Password!");
+        alert("Incorrect username or password!");
     }
 }
 
+// CALCULATOR FUNCTION
 function calculate() {
-    let subject = document.getElementById("subject").value;
-    let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
-    let p1te = parseInt(document.getElementById("p1te").value) || 0;
-    let p2ce = parseInt(document.getElementById("p2ce").value) || 0;
-    let p2te = parseInt(document.getElementById("p2te").value) || 0;
-    let p2pe = parseInt(document.getElementById("p2pe").value) || 0;
+    const p1ce = parseFloat(document.getElementById('p1ce').value) || 0;
+    const p1te = parseFloat(document.getElementById('p1te').value) || 0;
+    const p2ce = parseFloat(document.getElementById('p2ce').value) || 0;
+    const p2te = parseFloat(document.getElementById('p2te').value) || 0;
+    const p2pe = parseFloat(document.getElementById('p2pe').value) || 0;
+    const subject = document.getElementById('subject').value || "Subject";
 
-    let total = p1ce + p1te + p2ce + p2te + p2pe;
+    const total = p1ce + p1te + p2ce + p2te + p2pe;
 
-    let grade = "";
-    let gradeClass = "";
+    // PLAY SOUND
+    document.getElementById('gradeSound').play();
 
-    if (total >= 180) { grade = "A+"; gradeClass = "Aplus"; }
-    else if (total >= 160) { grade = "A"; gradeClass = "A"; }
-    else if (total >= 140) { grade = "B+"; gradeClass = "Bplus"; }
-    else if (total >= 120) { grade = "B"; gradeClass = "B"; }
-    else if (total >= 100) { grade = "C+"; gradeClass = "Cplus"; }
-    else if (total >= 80) { grade = "C"; gradeClass = "C"; }
-    else if (total >= 60) { grade = "D+"; gradeClass = "Dplus"; }
-    else if (total >= 40) { grade = "D"; gradeClass = "D"; }
-    else { grade = "E"; gradeClass = "E"; }
-
-    document.getElementById("gradeSound").play();
-
-    document.getElementById("output").innerHTML =
-        "<h3>Subject: " + subject + "</h3>" +
-        "<h3>Total Marks: " + total + " / 200</h3>" +
-        "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+    document.getElementById('output').innerHTML = `
+        <strong>${subject}</strong> Total Marks: ${total}
+    `;
 }
