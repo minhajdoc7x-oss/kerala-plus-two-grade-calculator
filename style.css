@@ -112,7 +112,7 @@ button[onclick="clearFields()"]:active {
 
 /* --- GRADE RANGE TABLE STYLING --- */
 .grade-info {
-    margin-top: 5px;
+    margin-top: 0px;
     background: #ffffff;
     padding: 15px;
     border-radius: 12px;
