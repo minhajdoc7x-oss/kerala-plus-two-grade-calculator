@@ -95,7 +95,7 @@ button[onclick="clearFields()"]:active {
 .result { margin-top: 20px; font-size: 18px; }
 
 .grade-box {
-    margin-top: 15px;
+    margin-top: 25px;
     padding: 15px;
     border-radius: 10px;
     font-size: 28px;
@@ -112,7 +112,7 @@ button[onclick="clearFields()"]:active {
 
 /* --- GRADE RANGE TABLE STYLING --- */
 .grade-info {
-    margin-top: 25px;
+    margin-top: 5px;
     background: #ffffff;
     padding: 15px;
     border-radius: 12px;
