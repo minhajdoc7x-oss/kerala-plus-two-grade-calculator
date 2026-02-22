@@ -1,67 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Plus Two Mark Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+2 Percentage Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="watermark">Minhaj</div>
 
-    <div class="container" id="loginPage">
-        <h2>🔐 Login</h2>
-        <input type="text" id="username" placeholder="Username">
-        <input type="password" id="password" placeholder="Password">
-        <button class="bubbly-button" onclick="login()">Login</button>
-    </div>
+    <div class="container">
+        <h2>📊 Percentage Calculator</h2>
+        
+        <label for="batchSelect">Choose Your Batch:</label>
+        <select id="batchSelect" onchange="updateSubjects()">
+            <option value="">-- None --</option>
+            <option value="science">Science</option>
+            <option value="commerce">Commerce</option>
+            <option value="humanities">Humanities</option>
+        </select>
 
-    <div class="container" id="mainPage" style="display:none;">
-        <h2>🎓 PLUS TWO MARK CALCULATOR</h2>
-
-        <input type="text" id="subject" placeholder="Enter Subject Name">
-
-        <h3>+1 Marks</h3>
-        <input type="number" id="p1ce" placeholder="+1 CE">
-        <input type="number" id="p1te" placeholder="+1 TE">
-
-        <h3>+2 Marks</h3>
-        <input type="number" id="p2ce" placeholder="+2 CE">
-        <input type="number" id="p2te" placeholder="+2 TE">
-        <input type="number" id="p2pe" placeholder="+2 PE (if any)">
-
-        <button class="bubbly-button" onclick="calculate()">Calculate Result</button>
-        <button class="bubbly-button" onclick="clearFields()" style="background-color: #6c757d; margin-top: 5px;">Clear All</button>
-
-        <div class="result" id="output" style="min-height: 20px; padding-bottom: 20px;"></div>
-
-        <hr style="border: 0.5px solid #eee; margin: 20px 0;">
-
-        <div class="grade-info">
-            <h3>📊 Grade Range Table</h3>
-            <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr style="background: #f2f2f2;">
-                    <th style="padding: 8px; border: 1px solid #ddd;">Total Mark</th>
-                    <th style="padding: 8px; border: 1px solid #ddd;">Grade</th>
-                </tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">180 - 200</td><td style="padding: 8px; border: 1px solid #ddd; color: #4CAF50; font-weight: bold;">A+</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">160 - 179</td><td style="padding: 8px; border: 1px solid #ddd; color: #2196F3; font-weight: bold;">A</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">140 - 159</td><td style="padding: 8px; border: 1px solid #ddd; color: #FF9800; font-weight: bold;">B+</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">120 - 139</td><td style="padding: 8px; border: 1px solid #ddd; color: #9C27B0; font-weight: bold;">B</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">100 - 119</td><td style="padding: 8px; border: 1px solid #ddd; color: #009688; font-weight: bold;">C+</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">80 - 99</td><td style="padding: 8px; border: 1px solid #ddd; color: #3F51B5; font-weight: bold;">C</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">60 - 79</td><td style="padding: 8px; border: 1px solid #ddd; color: #795548; font-weight: bold;">D+</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">40 - 59</td><td style="padding: 8px; border: 1px solid #ddd; color: #607D8B; font-weight: bold;">D</td></tr>
-                <tr><td style="padding: 8px; border: 1px solid #ddd;">Below 40</td><td style="padding: 8px; border: 1px solid #ddd; color: #f44336; font-weight: bold;">E</td></tr>
-            </table>
+        <div id="subjectInputs" class="input-group">
+            <p style="color: #666; margin-top: 15px;">Please select your batch to start.</p>
         </div>
-    </div>
 
-    <audio id="gradeSound">
-        <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
-    </audio>
+        <button class="bubbly-button" onclick="calculatePercentage()">Calculate %</button>
+        <button class="bubbly-button" onclick="clearAll()" style="background: #6c757d; margin-top: 10px;">Clear All</button>
+
+        <div id="result" class="result-box"></div>
+    </div>
 
     <div class="footer">
         © 2026 | Website created by Minhaj
