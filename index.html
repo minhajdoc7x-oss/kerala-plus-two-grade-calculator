@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+2 Percentage Calculator</title>
+    <meta charset="UTF-8">
+    <title>Plus Two Mark Calculator</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="watermark">Minhaj</div>
 
-    <div class="container">
-        <h2>📊 Percentage Calculator</h2>
-        
-        <label for="batchSelect">Choose Your Batch:</label>
-        <select id="batchSelect" onchange="updateSubjects()">
-            <option value="">-- None --</option>
-            <option value="science">Science</option>
-            <option value="commerce">Commerce</option>
-            <option value="humanities">Humanities</option>
-        </select>
-
-        <div id="subjectInputs" class="input-group">
-            <p style="color: #666; margin-top: 15px;">Please select your batch to start.</p>
-        </div>
-
-        <button class="bubbly-button" onclick="calculatePercentage()">Calculate %</button>
-        <button class="bubbly-button" onclick="clearAll()" style="background: #6c757d; margin-top: 10px;">Clear All</button>
-
-        <div id="result" class="result-box"></div>
+    <div class="container" id="loginPage">
+        <h2>🔐 Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="bubbly-button" onclick="login()">Login</button>
     </div>
+
+    <div class="container" id="mainPage" style="display:none;">
+        <h2>🎓 PLUS TWO MARK CALCULATOR</h2>
+
+        <input type="text" id="subject" placeholder="Enter Subject Name">
+
+        <h3>+1 Marks</h3>
+        <input type="number" id="p1ce" placeholder="+1 CE">
+        <input type="number" id="p1te" placeholder="+1 TE">
+
+        <h3>+2 Marks</h3>
+        <input type="number" id="p2ce" placeholder="+2 CE">
+        <input type="number" id="p2te" placeholder="+2 TE">
+        <input type="number" id="p2pe" placeholder="+2 PE (if any)">
+
+        <button class="bubbly-button" onclick="calculate()">Calculate Result</button>
+        <button class="bubbly-button" onclick="clearFields()" style="background-color: #6c757d; margin-top: 5px;">Clear All</button>
+
+        <div class="result" id="output" style="min-height: 20px; padding-bottom: 20px;"></div>
+    </div>
+
+    <audio id="gradeSound">
+        <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mpeg">
+    </audio>
 
     <div class="footer">
         © 2026 | Website created by Minhaj
