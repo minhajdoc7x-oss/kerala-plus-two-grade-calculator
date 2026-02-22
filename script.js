@@ -1,55 +1,85 @@
-const batchData = {
-    science: ["English", "Second Language", "Physics", "Chemistry", "Biology/CS", "Mathematics"],
-    commerce: ["English", "Second Language", "Business Studies", "Economics", "Accountancy", "Comp App/Maths/Stat"],
-    humanities: ["English", "Second Language", "History", "Economics", "Political Science", "Sociology"]
+function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
+
+    // Updated Username and Password
+    if(user === "minhaj" && pass === "2812") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("mainPage").style.display = "block";
+    } else {
+        alert("Wrong Username or Password!");
+    }
+}
+
+function calculate() {
+    let subject = document.getElementById("subject").value;
+    let p1ce = parseInt(document.getElementById("p1ce").value) || 0;
+    let p1te = parseInt(document.getElementById("p1te").value) || 0;
+    let p2ce = parseInt(document.getElementById("p2ce").value) || 0;
+    let p2te = parseInt(document.getElementById("p2te").value) || 0;
+    let p2pe = parseInt(document.getElementById("p2pe").value) || 0;
+
+    let total = p1ce + p1te + p2ce + p2te + p2pe;
+
+    let grade = "";
+    let gradeClass = "";
+
+    if (total >= 180) { grade = "A+"; gradeClass = "Aplus"; }
+    else if (total >= 160) { grade = "A"; gradeClass = "A"; }
+    else if (total >= 140) { grade = "B+"; gradeClass = "Bplus"; }
+    else if (total >= 120) { grade = "B"; gradeClass = "B"; }
+    else if (total >= 100) { grade = "C+"; gradeClass = "Cplus"; }
+    else if (total >= 80) { grade = "C"; gradeClass = "C"; }
+    else if (total >= 60) { grade = "D+"; gradeClass = "Dplus"; }
+    else if (total >= 40) { grade = "D"; gradeClass = "D"; }
+    else { grade = "E"; gradeClass = "E"; }
+
+    // Play sound
+    document.getElementById("gradeSound").play();
+
+    // Display Result
+    let outputDiv = document.getElementById("output");
+    outputDiv.innerHTML =
+        "<h3>Subject: " + subject + "</h3>" +
+        "<h3>Total Marks: " + total + " / 200</h3>" +
+        "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
+
+    // AUTO-SCROLL
+    outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // CONFETTI EFFECT
+    if (grade !== "E") {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#ff0081', '#ff6a00', '#1cc88a', '#4e73df']
+        });
+    }
+}
+
+function clearFields() {
+    document.getElementById("subject").value = "";
+    document.getElementById("p1ce").value = "";
+    document.getElementById("p1te").value = "";
+    document.getElementById("p2ce").value = "";
+    document.getElementById("p2te").value = "";
+    document.getElementById("p2pe").value = "";
+    document.getElementById("output").innerHTML = "";
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// BUBBLY BUTTON ANIMATION TRIGGER
+const animateButton = function(e) {
+    e.target.classList.remove('animate');
+    e.target.classList.add('animate');
+    setTimeout(function(){
+        e.target.classList.remove('animate');
+    }, 700);
 };
 
-function updateSubjects() {
-    const batch = document.getElementById('batchSelect').value;
-    const container = document.getElementById('subjectInputs');
-    container.innerHTML = "";
-
-    if (batch === "") {
-        container.innerHTML = "<p style='color: #666; margin-top: 15px;'>Please select your batch to start.</p>";
-        return;
-    }
-
-    batchData[batch].forEach((sub, index) => {
-        container.innerHTML += `<input type="number" id="sub${index}" placeholder="${sub} (Max 200)">`;
-    });
-}
-
-function calculatePercentage() {
-    const batch = document.getElementById('batchSelect').value;
-    if (batch === "") {
-        alert("Please choose a batch first!");
-        return;
-    }
-
-    let totalMarks = 0;
-    for (let i = 0; i < 6; i++) {
-        let val = document.getElementById(`sub${i}`).value;
-        totalMarks += parseFloat(val) || 0;
-    }
-
-    let percentage = (totalMarks / 1200) * 100;
-
-    // --- ഇതാണ് നീ ചോദിച്ച ഇഫക്റ്റ് (Confetti) ---
-    confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 },
-        colors: ['#ff0081', '#4e73df', '#1cc88a']
-    });
-
-    document.getElementById('result').innerHTML = `
-        <div style="font-size: 18px; color: #333; margin-top:15px;">Total Score: ${totalMarks} / 1200</div>
-        <div class="percent-display">${percentage.toFixed(2)}%</div>
-    `;
-}
-
-function clearAll() {
-    document.getElementById('batchSelect').value = "";
-    document.getElementById('result').innerHTML = "";
-    updateSubjects();
+// Apply animation to all buttons with the bubbly-button class
+const bubblyButtons = document.getElementsByClassName("bubbly-button");
+for (let i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
 }
