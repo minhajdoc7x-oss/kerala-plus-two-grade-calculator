@@ -43,11 +43,12 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
-    // --- അപ്‌ഡേറ്റ് ചെയ്ത ഓട്ടോ സ്ക്രോൾ കോഡ് ഇവിടെ ---
-    // block: 'start' നൽകിയാൽ റിസൾട്ട് സ്ക്രീനിന്റെ മുകളിലേക്ക് വരും
-    setTimeout(() => {
-        outputDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
+    // --- ഇതാ മുകളിലോട്ട് പോകാനുള്ള കോഡ് ---
+    // ഇത് പേജിനെ ഏറ്റവും മുകളിലേക്ക് എത്തിക്കും
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 
     // CONFETTI EFFECT
     if (grade !== "E") {
