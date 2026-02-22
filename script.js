@@ -2,7 +2,6 @@ function login() {
     let user = document.getElementById("username").value;
     let pass = document.getElementById("password").value;
 
-    // Updated Username and Password
     if(user === "minhaj" && pass === "2812") {
         document.getElementById("loginPage").style.display = "none";
         document.getElementById("mainPage").style.display = "block";
@@ -44,8 +43,11 @@ function calculate() {
         "<h3>Total Marks: " + total + " / 200</h3>" +
         "<div class='grade-box " + gradeClass + "'>GRADE: " + grade + "</div>";
 
-    // AUTO-SCROLL
-    outputDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // --- അപ്‌ഡേറ്റ് ചെയ്ത ഓട്ടോ സ്ക്രോൾ കോഡ് ഇവിടെ ---
+    // block: 'start' നൽകിയാൽ റിസൾട്ട് സ്ക്രീനിന്റെ മുകളിലേക്ക് വരും
+    setTimeout(() => {
+        outputDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
 
     // CONFETTI EFFECT
     if (grade !== "E") {
@@ -78,7 +80,6 @@ const animateButton = function(e) {
     }, 700);
 };
 
-// Apply animation to all buttons with the bubbly-button class
 const bubblyButtons = document.getElementsByClassName("bubbly-button");
 for (let i = 0; i < bubblyButtons.length; i++) {
     bubblyButtons[i].addEventListener('click', animateButton, false);
