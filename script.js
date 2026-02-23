@@ -24,6 +24,7 @@ function calculate() {
     let grade = "";
     let gradeClass = "";
 
+    // Grade logic
     if (total >= 180) { grade = "A+"; gradeClass = "Aplus"; }
     else if (total >= 160) { grade = "A"; gradeClass = "A"; }
     else if (total >= 140) { grade = "B+"; gradeClass = "Bplus"; }
@@ -34,8 +35,10 @@ function calculate() {
     else if (total >= 40) { grade = "D"; gradeClass = "D"; }
     else { grade = "E"; gradeClass = "E"; }
 
-    // Play sound
-    document.getElementById("gradeSound").play();
+    // UPDATED: Play sound with reset
+    const sound = document.getElementById("gradeSound");
+    sound.currentTime = 0; // Rewind to start
+    sound.play().catch(error => console.log("Playback error:", error));
 
     // Display Result
     let outputDiv = document.getElementById("output");
@@ -66,7 +69,7 @@ function clearFields() {
     document.getElementById("p2te").value = "";
     document.getElementById("p2pe").value = "";
     document.getElementById("output").innerHTML = "";
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' }); //
 }
 
 // BUBBLY BUTTON ANIMATION TRIGGER
@@ -78,7 +81,6 @@ const animateButton = function(e) {
     }, 700);
 };
 
-// Apply animation to all buttons with the bubbly-button class
 const bubblyButtons = document.getElementsByClassName("bubbly-button");
 for (let i = 0; i < bubblyButtons.length; i++) {
     bubblyButtons[i].addEventListener('click', animateButton, false);
